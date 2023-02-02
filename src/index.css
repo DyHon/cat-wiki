@@ -19,3 +19,26 @@ body, html {
 .HeadImg {
   background: center / cover url('/src/assets/HeroImagelg.png') no-repeat;
 }
+
+/* Scroll Bar */
+
+::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 15px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #BDBDBD;
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}

@@ -3,11 +3,11 @@ import React from 'react'
 function SearchSection() {
   return (
     <div
-      className='md:h-[32rem] 
+      className='md:h-[32rem] mt-20
       bg-[url(/src/assets/HeroImagesm.png)] 
       md:bg-[url(/src/assets/HeroImagelg.png)] 
       bg-top md:bg-center bg-cover bg-no-repeat 
-      py-24 px-16 rounded-t-[3rem] inline-block '
+      py-24 px-16 rounded-t-[3rem] inline-block'
     >
       <div className='flex flex-col md:w-1/2 w-full'>
         {/* Logo */}
@@ -15,7 +15,7 @@ function SearchSection() {
         {/* Title */}
         <div className='text-xl md:text-2xl text-white mt-4'>Get to know more about your cat breed</div>
         {/* Search Box */}
-        <div className='flex items-center mt-8'>
+        <div className='flex items-center mt-8 relative'>
           <input
             type="text"
             className="border-none focus:outline-none w-3/4 py-3 pl-6 pr-8 rounded-full text-xl -mr-8"
@@ -28,9 +28,17 @@ function SearchSection() {
               </g>
             </svg>
           </button>
+          {/* Search Bar */}
+          <section className='bg-white absolute top-16 w-[80%] rounded-2xl z-10 overflow-y-scroll h-48'>
+            <div className='hover:bg-[rgba(151,151,151,0.3)] hover:cursor-pointer p-4'>Meo Cai Banggg</div>
+            <div className='hover:bg-[rgba(151,151,151,0.3)] hover:cursor-pointer p-4'>Meo Cai Banggg</div>
+            <div className='hover:bg-[rgba(151,151,151,0.3)] hover:cursor-pointer p-4'>Meo Cai Banggg</div>
+            <div className='hover:bg-[rgba(151,151,151,0.3)] hover:cursor-pointer p-4'>Meo Cai Banggg</div>
+            <div className='hover:bg-[rgba(151,151,151,0.3)] hover:cursor-pointer p-4'>Meo Cai Banggg</div>
+            <div className='hover:bg-[rgba(151,151,151,0.3)] hover:cursor-pointer p-4'>Meo Cai Banggg</div>
+            <div className='hover:bg-[rgba(151,151,151,0.3)] hover:cursor-pointer p-4'>Meo Cai Banggg</div>
+          </section>
         </div>
-        {/* Search Bar */}
-        <div></div>
       </div>
     </div>
   )

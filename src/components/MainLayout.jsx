@@ -4,7 +4,7 @@ function MainLayout({children}) {
   return (
     <div className='px-16 flex flex-col'>
       {/* Header */}
-      <div className='p-4'>
+      <div className='p-4 fixed top-0 left-0 w-full z-20 bg-white overflow-hidden'>
         <img src="/src/assets/CatwikiLogo.svg" alt="logo" />
       </div>
       {/* Content */}
