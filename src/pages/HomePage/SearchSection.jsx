@@ -1,6 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { useCatsStore } from '../../store/catsStore';
+import { Link } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import { catPageQuery } from '../../api/cat';
 
 function SearchSection() {
+  const [openSearch, setOpenSearch] = useState(false);
+  const [displayNames, setDisplayNames] = useState(null);
+
+  const data = useCatsStore((state) => state.cats);
+  const catNames = data.map((cat) => ({
+      id: cat.id,
+      name: cat.name.toLowerCase()
+    }
+  ));
+  
+  const handleSearchChange = (e) => {
+    setOpenSearch(true)
+    const searchInput = e.target.value
+    setDisplayNames(catNames.filter(catName => { return catName.name.search(searchInput) != -1 }))
+  }
+
   return (
     <div
       className='md:h-[32rem] mt-20
@@ -20,6 +40,8 @@ function SearchSection() {
             type="text"
             className="border-none focus:outline-none w-3/4 py-3 pl-6 pr-8 rounded-full text-xl -mr-8"
             placeholder="Enter your breed"
+            onChange={handleSearchChange}
+            onBlur={() => setTimeout(() =>setOpenSearch(false), 100)}
           />
           <button className="border-none" type='button'>
             <svg className="h-6 w-6 fill-black" aria-hidden="true" viewBox="0 0 24 24">
@@ -29,15 +51,25 @@ function SearchSection() {
             </svg>
           </button>
           {/* Search Bar */}
-          <section className='bg-white absolute top-16 w-[80%] rounded-2xl z-10 overflow-y-scroll h-48'>
-            <div className='hover:bg-[rgba(151,151,151,0.3)] hover:cursor-pointer p-4'>Meo Cai Banggg</div>
-            <div className='hover:bg-[rgba(151,151,151,0.3)] hover:cursor-pointer p-4'>Meo Cai Banggg</div>
-            <div className='hover:bg-[rgba(151,151,151,0.3)] hover:cursor-pointer p-4'>Meo Cai Banggg</div>
-            <div className='hover:bg-[rgba(151,151,151,0.3)] hover:cursor-pointer p-4'>Meo Cai Banggg</div>
-            <div className='hover:bg-[rgba(151,151,151,0.3)] hover:cursor-pointer p-4'>Meo Cai Banggg</div>
-            <div className='hover:bg-[rgba(151,151,151,0.3)] hover:cursor-pointer p-4'>Meo Cai Banggg</div>
-            <div className='hover:bg-[rgba(151,151,151,0.3)] hover:cursor-pointer p-4'>Meo Cai Banggg</div>
-          </section>
+          {openSearch &&
+            <section
+              className='bg-white absolute top-16 w-[80%] rounded-2xl z-10 overflow-y-scroll h-48'>
+              {displayNames?.map((displayName) =>
+                <Link reloadDocument key={displayName.id} to={`breed/${displayName.id}`}
+                >
+                  <div className='hover:bg-[rgba(151,151,151,0.3)] hover:cursor-pointer p-4'>
+                    {displayName.name}
+                  </div>
+                </Link>
+                // <a key={displayName.id} href={`breed/${displayName.id}`}
+                // >
+                //   <div className='hover:bg-[rgba(151,151,151,0.3)] hover:cursor-pointer p-4'>
+                //     {displayName.name}
+                //   </div>
+                // </a>
+              )}
+            </section>
+          }
         </div>
       </div>
     </div>

@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import useSWR from "swr"
-
-const fetcher = async (...args) => await fetch(...args).then(res => res.json())
+import { fetcher } from '../../utils/fetcher'
 
 function MostSearched() {
   const { data: catImages } = useSWR(`${import.meta.env.VITE_API_ENDPOINT}/breeds?api_key=${import.meta.env.VITE_API_KEY}&limit=4`, fetcher)
