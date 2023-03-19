@@ -18,11 +18,11 @@ function CatBlogSection() {
       </div>
       <div className='flex flex-row md:w-[40%]'>
         <div>
-          <img src="/src/assets/image 2.png" />
-          <img src="/src/assets/image 1.png" />
+          <img src="/assets/image 2.png" />
+          <img src="/assets/image 1.png" />
         </div>
         <div className='flex items-center'>
-          <img src="/src/assets/image 3.png" />
+          <img src="/assets/image 3.png" />
         </div>
       </div>
     </div>

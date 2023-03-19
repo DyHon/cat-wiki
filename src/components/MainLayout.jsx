@@ -7,7 +7,7 @@ function MainLayout({children}) {
       {/* Header */}
       <div className='p-2 md:p-4 fixed top-0 left-0 w-full z-20 bg-white overflow-hidden'>
         <Link to={`/`}>
-          <img src="/src/assets/CatwikiLogo.svg" alt="logo"/>
+          <img src="/assets/CatwikiLogo.svg" alt="logo"/>
         </Link>
       </div>
       {/* Content */}
@@ -15,7 +15,7 @@ function MainLayout({children}) {
       {/* Footer */}
       <div className='flex justify-center'>
         <div className='bg-black p-4 w-full rounded-t-3xl text-white flex justify-between'>
-          <img src='/src/assets/CatwikiLogoFooter.svg' alt='' />
+          <img src='/assets/CatwikiLogoFooter.svg' alt='' />
           <span className='flex items-center text-xs md:text-base'>© created by DyHon - devChallenge.io 2021</span>
         </div>
       </div>

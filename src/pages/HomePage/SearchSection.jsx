@@ -31,7 +31,7 @@ function SearchSection() {
     >
       <div className='flex flex-col md:w-1/2 w-full'>
         {/* Logo */}
-        <img className='h-1/2 w-1/2' src="/src/assets/CatwikiLogoFooter.svg" alt="" />
+        <img className='h-1/2 w-1/2' src="/assets/CatwikiLogoFooter.svg" alt="" />
         {/* Title */}
         <div className='text-xl md:text-2xl text-white mt-4'>Get to know more about your cat breed</div>
         {/* Search Box */}
