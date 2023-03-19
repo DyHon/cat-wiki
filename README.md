@@ -84,3 +84,6 @@ $ npm start
 - The image file as i represent in my code, it was in src/assets folder, and i realise that the vite build function build the css file, and transform the src to the domain (as src for production). But in the js file, it gender the image tag, and src element withough the transformation.
 - So i decide to change the src link as below, and it is worked correctly.
 - And i got another fun fact that if the link in the src file is not correct, the image file will not render to the source page, it just rendered if it need to!!!
+   
+   
+## Deploy Link: https://dyhon-catwiki.netlify.app/
